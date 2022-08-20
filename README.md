@@ -8,8 +8,6 @@
   <br><br>
 </p>
 
-# Leaf PHP
-
 [![Latest Stable Version](https://poser.pugx.org/leafs/viewi/v/stable)](https://packagist.org/packages/leafs/viewi)
 [![Total Downloads](https://poser.pugx.org/leafs/viewi/downloads)](https://packagist.org/packages/leafs/viewi)
 [![License](https://poser.pugx.org/leafs/viewi/license)](https://packagist.org/packages/leafs/viewi)
