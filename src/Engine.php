@@ -35,7 +35,7 @@ class Engine
     public function init($config = [], $publicConfig = null)
     {
         $config = array_merge([
-            PageEngine::SOURCE_DIR => getcwd() . '/viewi-app/components',
+            PageEngine::SOURCE_DIR => getcwd() . '/viewi-app/Components',
             PageEngine::SERVER_BUILD_DIR =>  getcwd() . '/viewi-app/build',
             PageEngine::PUBLIC_ROOT_DIR => getcwd(),
             PageEngine::DEV_MODE => true,
