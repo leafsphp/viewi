@@ -5,15 +5,15 @@ declare(strict_types=1);
 use Leaf\Viewi\Engine;
 
 if (!function_exists('viewi')) {
-    function viewi(): Engine
-    {
-        $viewi = Leaf\Config::get('viewi')['instance'] ?? null;
+  function viewi(): Engine
+  {
 
-        if (!$viewi) {
-            $viewi = new Engine();
-            Leaf\Config::set('viewi', ['instance' => $viewi]);
-        }
-
-        return $viewi;
+    if (!(\Leaf\Config::getStatic('viewi'))) {
+      \Leaf\Config::singleton('viewi', function () {
+        return new Engine();
+      });
     }
+
+    return \Leaf\Config::get('viewi');
+  }
 }
