@@ -38,11 +38,17 @@ class Adapter extends RouteAdapterBase
         $internalResponse = new RawResponse();
         $internalResponse->makeInternal(); // make it not to send output
         // set as current response instance
-        \Leaf\Config::set("response", ["instance" => $internalResponse]);
+        \Leaf\Config::singleton('response', function () use ($internalResponse) {
+          return $internalResponse;
+        });
+
         // handle url internally
         $this->leafInstance->handleUrl(strtoupper($method), $url);
         // set original response back
-        \Leaf\Config::set("response", ["instance" => $originResponse]);
+        \Leaf\Config::singleton('response', function () use ($originResponse) {
+          return $originResponse;
+        });
+
         // return data to Viewi
         return $internalResponse->getRawData();
     }
